@@ -7,7 +7,7 @@ let data = [
     { username: "sushma", password: "54321" }
 ]
 
-const auth = (req, res, next) =>{
+const auth1 = (req, res, next) =>{
     const token = req.headers.authorization
     const justToken = token.split(' ')[1]    
     jwt.verify(justToken, 'secret', (error) => {
@@ -33,7 +33,7 @@ Router.post("/newlogin", (req, res) => {
     }
 })
 
-Router.get("/userdetails", auth, (req, res) => {
+Router.get("/userdetails", auth1, (req, res) => {
     res.json({
         msg: "user details"
     })
