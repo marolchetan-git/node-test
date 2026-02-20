@@ -18,7 +18,7 @@ const auth1 = (req, res, next) =>{
     next()
 }
 
-Router.post("/login", (req, res) => {
+Router.post("/logout", (req, res) => {
     const { username, password } = req.body
     const user = data.find(d => d.username === username)
     if (!user) {
